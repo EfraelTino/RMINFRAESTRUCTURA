@@ -1,0 +1,161 @@
+---
+const props = Astro.props;
+
+const servicios = [
+  {
+    id: 1,
+    titulo: "Ingeniería",
+    data: [
+      {
+        id: 1,
+        name: "Asesoramiento Técnico",
+      },
+      {
+        id: 2,
+        name: "Diseño de planos (arquitectura, estructura, eléctricos, sanitarios, seguridad)",
+      },
+      {
+        id: 3,
+        name: "Licencias de regularización, INDECI, etc.",
+      },
+      {
+        id: 4,
+        name: "Trámites municipales",
+      },
+    ],
+  },
+  {
+    id: 2,
+    titulo: "Remodelación y ampliación de instalaciones",
+    data: [
+      {
+        id: 1,
+        name: "Albañilería",
+      },
+      {
+        id: 2,
+        name: "Fabricación y montaje de Estructuras metálicas",
+      },
+      {
+        id: 3,
+        name: "Tabiquería en drywall y cielo raso",
+      },
+      {
+        id: 4,
+        name: "Ampliaciones y acondicionamientos de oficinas y locales",
+      },
+      {
+        id: 5,
+        name: "Acabado de interiores en general",
+      },
+    ],
+  },
+  {
+    id: 3,
+    titulo: "Instalaciones sanitarias",
+    data: [
+      {
+        id: 2,
+        name: "Instalaciones eléctricas",
+      },
+      {
+        id: 3,
+        name: "Pintado de fachadas",
+      },
+      {
+        id: 4,
+        name: "Pintado de interiores",
+      },
+      {
+        id: 5,
+        name: "Pintado de estructura metálica",
+      },
+      {
+        id: 6,
+        name: "Pintura en general",
+      },
+    ],
+  },
+];
+---
+
+{
+  servicios.map((item) => (
+    <section class="border hover:border-green hover:border-opacity-50 border-number rounded-lg p-[10px] md:p-[30px] shadow-lg my-1">
+      <h4 class="text-number font-[800] text-[4rem] leading-10 transition-all">
+        {item.id}
+      </h4>
+      <h3
+        class="my-[20px] font-[700] text-[26px]"
+        style={{ letterSpacing: "-1.5px" }}
+      >
+        {item.titulo}
+      </h3>
+
+      <ul class="mb-3">
+        {item.data.map((dato) => (
+          <li class="mb-1 text-parrafo text-[16px] flex items-center gap-2">
+
+            <svg
+             xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 48 48"
+              class="text-green flex-shrink-0"
+              style={{ minWidth: "24px" }}
+              {...props}
+            >
+              <defs>
+                <mask id="ipSCheckOne0">
+                  <g fill="none" stroke-linejoin="round" stroke-width="4">
+                    <path
+                      fill="#fff"
+                      stroke="#fff"
+                      d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z"
+                    />
+                    <path
+                      stroke="#000"
+                      stroke-linecap="round"
+                      d="m16 24l6 6l12-12"
+                    />
+                  </g>
+                </mask>
+              </defs>
+              <path
+                fill="currentColor"
+                d="M0 0h48v48H0z"
+                mask="url(#ipSCheckOne0)"
+              />
+            </svg>
+            <span class="flex-grow">{dato.name}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex justify-start">
+        <a
+          href=""
+          class="text-[18px] uppercase text-green font-black flex items-center gap-2 border-b-2 border-white hover:border-b-valencia transition-all"
+        >
+          DETALLES{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.4em"
+            height="1.4em"
+            viewBox="0 0 24 24"
+            {...props}
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M7 7h10m0 0v10m0-10L7 17"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+  ))
+}

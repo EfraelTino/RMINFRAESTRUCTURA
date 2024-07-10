@@ -1,0 +1,21 @@
+---
+import { FormItem } from "../components/FormItems" 
+---
+
+<section class="flex justify-center pb-12">
+    <div class="grid grid-cols-1 py-10 md:max-w-[480px] lg:grid-cols-1 lg:py-10 lg:max-w-6xl w-full px-[40px] md:px-0 lg:px-0">
+        <div class="flex items-center justify-center gap-2 ">
+            <span class="h-[3px] w-[40px] bg-valencia col-span-1"></span>
+            <h3 class="col-span-4 font-bold tracking-tight text-black">ENVÍANOS UN MENSAJE</h3>
+        </div>
+        <div class="flex flex-col justify-center items-center pb-6">
+            <h2 class="font-black leading-none text-[42px] text-black" style={{letterSpacing: '-1.9px'}}>
+                Contacta con <span class="text-green">nosotros</span>
+            </h2>
+        </div>
+        <div class="grid">
+            <FormItem client:visible/>
+        </div>
+    
+    </div>
+</section>
